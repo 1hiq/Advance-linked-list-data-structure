@@ -485,8 +485,8 @@ template <class type> type Advance_Linked_list<type>::getValueOfIndex(int index)
 		cout << "This linked-list is empty.\n";
 		return -1;
 	}
-	else if (index >= getSize()) {
-		cout << "Error, index should be LESS than the size of the linked-list.\n";
+	else if (index >= getSize() || index < 0) {
+		cout << "Error, index should be LESS than the size of the linked-list AND MORE than -1.\n";
 		return -1;
 	}
 	else {
@@ -617,8 +617,8 @@ template <class type> void Advance_Linked_list<type>::editValue(int indexOfNode,
 	if (isEmpty()) {
 		cout << "This linked-list is empty.\n";
 	}
-	else if (indexOfNode >= getSize()) {
-		cout << "Error, index of node should be LESS than the length of the linked-list.\n";
+	else if (indexOfNode >= getSize() || indexOfNode < 0) {
+		cout << "Error, index of node should be LESS than the length of the linked-list AND MORE than -1.\n";
 	}
 	else {
 		Node* mover = head;
@@ -638,8 +638,8 @@ template <class type> void Advance_Linked_list<type>::swapNode(int indexOfFirstN
 	else if (head->next == NULL) {
 		cout << "This linked-list contains only one node, so I can't swap.\n";
 	}
-	else if (indexOfFirstNode >= getSize() || indexOfSecondNode >= getSize()) {
-		cout << "Error, index should be LESS than the length of linked-list.\n";
+	else if (indexOfFirstNode >= getSize() || indexOfFirstNode < 0 || indexOfSecondNode >= getSize() || indexOfFirstNode < 0) {
+		cout << "Error, index should be LESS than the length of linked-list AND MORE than -1.\n";
 	}
 	else {
 		type firstData = getNodeOfThisIndex(indexOfFirstNode)->data;
