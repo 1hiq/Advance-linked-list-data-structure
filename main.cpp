@@ -684,7 +684,7 @@ template <class type> void Advance_Linked_list<type>::clear() {
 		cout << "This linked-list is empty.\n";
 	}
 	else {
-		int orginalSize = ;
+		int orginalSize = elementsNumber;
 		for (int i = 0; i < orginalSize; i++)
 			removeNodeAtTheEnd();
 	}
