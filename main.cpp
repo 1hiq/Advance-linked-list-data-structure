@@ -207,6 +207,16 @@ template <class type> type Advance_Linked_list<type>::removeNodeAtTheEnd() {
 		return false;
 	}
 	else {
+		if (head->next == NULL){
+			type value = head->data;
+			
+			free(head->next);
+			head = NULL;
+			tail = NULL;
+			
+			return value;
+		}
+			
 		Node* lastNode = tail;
 		type dataInTheLastNode = lastNode->data;
 		tail = tail->before;
@@ -674,11 +684,8 @@ template <class type> void Advance_Linked_list<type>::clear() {
 		cout << "This linked-list is empty.\n";
 	}
 	else {
-		for (int i = 0; i < getSize(); i++) {
-			free(getNodeOfThisIndex(i));
-		}
-
-		head = NULL;
-		tail = NULL;
+		int orginalSize = ;
+		for (int i = 0; i < orginalSize; i++)
+			removeNodeAtTheEnd();
 	}
 }
